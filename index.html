@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- a-frame -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <!-- ar.js -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0px; overflow: hidden">
+    <a-scene embedded arjs>
+      <a-assets>
+        <a-asset-item id="train" src="/assets/train.glb"></a-asset-item>
+      </a-assets>
+
+      <a-marker preset="hiro">
+        <!-- train with animation -->
+        <a-entity
+          position="0 0 0"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;"
+        >
+          <!-- train model with coordinates -->
+          <a-entity
+            gltf-model="#train"
+            position=" 10 -0.3 0"
+            rotation="0 -90 0 "
+          ></a-entity>
+        </a-entity>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
