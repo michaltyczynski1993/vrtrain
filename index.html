@@ -15,18 +15,13 @@
       </a-assets>
 
       <a-marker preset="hiro">
-        <!-- train with animation -->
+        <!-- train model with coordinates -->
         <a-entity
-          position="0 0 0"
-          animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;"
-        >
-          <!-- train model with coordinates -->
-          <a-entity
-            gltf-model="#train"
-            position=" 10 -0.3 0"
-            rotation="0 -90 0 "
-          ></a-entity>
-        </a-entity>
+          gltf-model="#train"
+          position="0 -0.3 0"
+          scale="0.3 0.3 0.3"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear;"
+        ></a-entity>
       </a-marker>
 
       <a-entity camera></a-entity>
